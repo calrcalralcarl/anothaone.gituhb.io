@@ -1,47 +1,53 @@
-:root{
-  --primary: #fff;
-  --bg-color: rgb(5, 53, 61);
-  --bg-envelope-color: #f5edd1;
-  --envelope-tab: #ecdeb8;
-  --envelope-cover: #e6cfa7;
-  --shadow-color: rgba(0, 0, 0, 0.2);
-  --txt-color: #444;
-  --heart-color: rgb(252, 8, 231);
+:root {
+  --paper-color: #fff; /* The color of the paper */
+  --background-color: rgb(5, 53, 61); /* The soft, calm background */
+  --envelope-background: #f5edd1; /* The subtle shade of the envelope */
+  --envelope-tab-color: #ecdeb8; /* The fold of the envelope */
+  --envelope-cover-color: #e6cfa7; /* The cover of the envelope */
+  --shadow-effect: rgba(0, 0, 0, 0.2); /* The shadow that adds depth */
+  --text-color: #444; /* The color of the love letter text */
+  --heart-color: rgb(252, 8, 231); /* The color of the heart, my love */
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: var(--bg-color);
+  background: var(--background-color); /* Deep, calming background */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .container {
   height: 100vh;
   display: grid;
-  place-items: center;
+  place-items: center; /* Center everything */
 }
+
 .container > .envelope-wrapper {
-  background: var(--bg-envelope-color);
-  box-shadow: 0 0 40px var(--shadow-color);
+  background: var(--envelope-background); /* Envelope's soft color */
+  box-shadow: 0 0 40px var(--shadow-effect); /* Soft shadow to add dimension */
 }
+
 .envelope-wrapper > .envelope {
   position: relative;
   width: 300px;
   height: 230px;
 }
+
 .envelope-wrapper > .envelope::before {
   content: "";
   position: absolute;
   top: 0;
   z-index: 2;
-  border-top: 130px solid var(--envelope-tab);
+  border-top: 130px solid var(--envelope-tab-color); /* Fold's color */
   border-right: 150px solid transparent;
   border-left: 150px solid transparent;
   transform-origin: top;
-  transition: all 0.5s ease-in-out 0.7s;
+  transition: all 0.5s ease-in-out 0.7s; /* Smooth transition for flap opening */
 }
+
 .envelope-wrapper > .envelope::after {
   content: "";
   position: absolute;
@@ -49,67 +55,68 @@ body{
   width: 0px;
   height: 0px;
   border-top: 130px solid transparent;
-  border-right: 150px solid var(--envelope-cover);
-  border-bottom: 100px solid var(--envelope-cover);
-  border-left: 150px solid var(--envelope-cover);
+  border-right: 150px solid var(--envelope-cover-color); /* Envelope's gentle cover */
+  border-bottom: 100px solid var(--envelope-cover-color);
+  border-left: 150px solid var(--envelope-cover-color);
 }
+
 .envelope > .letter {
   position: absolute;
   right: 20%;
   bottom: 0;
   width: 54%;
   height: 80%;
-  background: var(--primary);
+  background: var(--paper-color); /* The love letter itself */
   text-align: center;
   transition: all 1s ease-in-out;
-  box-shadow: 0 0 5px var(--shadow-color);
+  box-shadow: 0 0 5px var(--shadow-effect);
   padding: 20px 10px;
 }
 
 .envelope > .letter > .text {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: var(--txt-color);
+  color: var(--text-color); /* Text color for the words of love */
   text-align: left;
   font-size: 10px;
 }
+
 .heart {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 15px;
   height: 15px;
-  background: var(--heart-color);
+  background: var(--heart-color); /* Heart's passionate color */
   z-index: 4;
   transform: translate(-50%, -20%) rotate(45deg);
-  transition: transform 0.5s ease-in-out 1s;
-  box-shadow: 0 1px 6px var(--shadow-color);
-  cursor: pointer;
+  transition: transform 0.5s ease-in-out 1s; /* Heart's animation after a delay */
+  box-shadow: 0 1px 6px var(--shadow-effect);
+  cursor: pointer; /* Heart is clickable */
 }
+
 .heart:before, 
 .heart:after {
   content: "";
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: var(--heart-color);
+  background-color: var(--heart-color); /* Same heart color */
   border-radius: 50%;
 }
+
 .heart:before {
-  top: -7.5px;
+  top: -7.5px; /* Above the main heart */
 }
+
 .heart:after {
-  right: 7.5px;
+  right: 7.5px; /* Right side of the heart */
 }
+
 .flap > .envelope:before {
-  transform: rotateX(180deg);
+  transform: rotateX(180deg); /* Flipping the envelope for the reveal */
   z-index: 0;
 }
+
 .flap > .envelope > .letter {
-  bottom: 100px;
-  transform: scale(1.5);
-  transition-delay: 1s;
-}
-.flap > .heart {
-  transform: rotate(90deg);
-  transition-delay: 0.4s;
-}
+  bottom: 100px; /* Lift the letter as the envelope opens */
+  transform: scale(1.5); /* Make the letter g
