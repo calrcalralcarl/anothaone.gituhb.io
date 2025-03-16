@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <title>Love Letter in an Envelope (Open/Close with a Click)</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="envelope-wrapper">
+    <div class="wrapper">
+        <div class="envelope-container">
             <div class="envelope">
                 <div class="letter">
-                    <div class="text">
-                        <strong>Dear Person.</strong>
+                    <div class="message">
+                        <strong>To My Dearest,</strong>
                         <p>
-                            I LOVEE YOUU VERY MUCHHYYY
+                            I adore you more than words can express! You have my heart entirely.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="heart"></div>
+            <div class="love-heart"></div>
         </div>
     </div>
     <script>
-        const envelope = document.querySelector('.envelope-wrapper');
+        const envelope = document.querySelector('.envelope-container');
         envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
+            envelope.classList.toggle('opened');
         });
     </script>
 </body>
